@@ -1,0 +1,98 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 10%;
+    --foreground: 220 10% 98%;
+
+    --card: 220 20% 15%;
+    --card-foreground: 220 10% 98%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 220 10% 98%;
+
+    --primary: 250 80% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 190 90% 57%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 250 67% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 25%;
+    --input: 220 20% 18%;
+    --ring: 250 80% 75%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-spy-dark text-foreground font-spy;
+  }
+}
+
+@layer components {
+  .code-char {
+    @apply inline-block font-mono px-1 py-0.5 rounded transition-all duration-300;
+  }
+
+  .code-char-highlighted {
+    @apply bg-spy-purple/30 text-white;
+  }
+
+  .code-char-transformed {
+    @apply bg-spy-blue/30 text-white animate-flip-character;
+  }
+
+  .matrix-background {
+    @apply fixed inset-0 z-0 overflow-hidden pointer-events-none opacity-10;
+  }
+
+  .matrix-column {
+    @apply absolute top-0 text-spy-blue text-opacity-70 font-mono text-sm whitespace-nowrap animate-matrix-fall;
+  }
+
+  .encryption-step {
+    @apply border border-spy-blue/30 bg-spy-dark/80 rounded-md p-4 mb-4;
+  }
+
+  .glow-border {
+    @apply border border-spy-blue rounded-md animate-pulse-glow;
+  }
+
+  .spy-button {
+    @apply bg-spy-blue hover:bg-spy-purple text-white font-mono py-2 px-4 rounded-md transition-all duration-300 shadow-lg hover:shadow-spy-purple/50;
+  }
+
+  .spy-toggle-button {
+    @apply bg-spy-dark hover:bg-spy-purple/70 text-white font-mono py-2 px-4 rounded-md transition-all duration-300 border border-spy-purple/50;
+  }
+
+  .spy-toggle-button-active {
+    @apply bg-spy-purple text-white;
+  }
+
+  .spy-terminal {
+    @apply font-mono bg-black/50 text-spy-blue p-4 rounded-md border border-spy-blue/30 overflow-x-auto;
+  }
+
+  .method-card {
+    @apply border border-spy-purple/30 bg-spy-dark/80 rounded-md p-4 hover:border-spy-purple/70 hover:bg-spy-dark/90 transition-all cursor-pointer;
+  }
+}
